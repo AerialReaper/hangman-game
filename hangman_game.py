@@ -1,4 +1,5 @@
 from random import choice
+from os import system
 
 lifes = 6
 
@@ -52,7 +53,7 @@ def init_game():
     while lifes > 0 and not complete_word():
         player_letter = input("Enter a letter: ").upper()
         player_letter = '-' if (player_letter == '') else player_letter
-        print('\n')
+        system('cls')
         check_letter_in_word(player_letter)
         show_board(hidden_word)
 
@@ -284,6 +285,7 @@ list_words = [
 ]
 no_valid_letters = []
 
+system('cls')
 print('GUESS THE ANIMAL!')
 word = select_word(list_words)
 hidden_word = hide_word(word)
